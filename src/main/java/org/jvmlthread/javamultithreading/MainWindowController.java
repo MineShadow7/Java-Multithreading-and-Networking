@@ -1,7 +1,5 @@
 package org.jvmlthread.javamultithreading;
 
-import javafx.animation.AnimationTimer;
-import javafx.animation.Timeline;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,10 +11,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
-import javafx.scene.shape.Line;
-
-import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -49,9 +43,6 @@ public class MainWindowController {
         Player.setImage(new Image("file:Assets/Stickman/Idle/Idle.png"));
     }
 
-    public void OnPane1MouseClick(MouseEvent mouseEvent) {
-    }
-
     public void OnStartButtonClick(ActionEvent actionEvent) {
         if (!gameRunning) {
             gameRunning = true;
@@ -65,7 +56,7 @@ public class MainWindowController {
     }
 
     public void onShootbtnClick(ActionEvent actionEvent) {
-        if (gameRunning) {
+        if (gameRunning && !isPaused.get()) {
             shootArrow();
         }
     }
@@ -86,7 +77,7 @@ public class MainWindowController {
             if (!isPaused.get()) {
                 Platform.runLater(() -> {
                     // Обновление позиции мишени 1
-                    double newY1 = target1.getCenterY() + 5 * directiont1[0];
+                    double newY1 = target1.getCenterY() + 1 * directiont1[0];
                     if (newY1 < 0 || newY1 > panelHeight) {
                         directiont1[0] = -directiont1[0]; // Изменение направления движения
                     }
@@ -165,9 +156,12 @@ public class MainWindowController {
         isPaused.set(!isPaused.get());
     }
 
-    public void stop(){
+    public void stop(ActionEvent actionEvent){
         if (executorService != null) {
             executorService.shutdownNow();
         }
+        gameRunning = false;
+        isPaused.set(false);
+        ScoreLabel.setText("0");
     }
 }
