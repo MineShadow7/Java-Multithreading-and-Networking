@@ -10,6 +10,7 @@ module org.jvmlthread.javamultithreading {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires java.logging;
 
     opens org.jvmlthread.javamultithreading to javafx.fxml;
     exports org.jvmlthread.javamultithreading;

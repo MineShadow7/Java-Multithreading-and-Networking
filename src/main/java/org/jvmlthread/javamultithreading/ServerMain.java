@@ -2,10 +2,11 @@ package org.jvmlthread.javamultithreading;
 
 import java.io.*;
 import java.net.Socket;
+import java.net.SocketTimeoutException;
 
 public class ServerMain {
     Socket socket;
-
+    ServerMain()
     {
         try {
             socket = new Socket("ya.ru", 80);
@@ -22,9 +23,20 @@ public class ServerMain {
             InputStream is = socket.getInputStream();
             BufferedReader br = new BufferedReader(new InputStreamReader(is, "cp1251"));
             String line = br.readLine();
+            while(line != null){
+                System.out.println(line);
+                try{
+                    line = br.readLine();
+                }catch (SocketTimeoutException ex){
+                    ex.printStackTrace(System.out);
+                    break;
+                }
+            }
+            os.close();
+            br.close();
+            socket.close();
         } catch (IOException e) {
-            System.out.println(e.getMessage());
-            throw new RuntimeException(e);
+            System.err.println(e.getMessage());
         }
     }
 

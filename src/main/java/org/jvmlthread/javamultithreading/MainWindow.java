@@ -10,6 +10,8 @@ import java.io.IOException;
 public class MainWindow extends Application {
     @Override
     public void start(Stage stage) throws IOException {
+        ServerMain server = new ServerMain();
+
         FXMLLoader fxmlLoader = new FXMLLoader(MainWindow.class.getResource("MainWindowView.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Multithreading Game Labwork 1");
