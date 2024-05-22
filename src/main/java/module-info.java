@@ -11,6 +11,9 @@ module org.jvmlthread.javamultithreading {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
     requires java.logging;
+    requires com.google.gson;
+    requires jakarta.persistence;
+    requires hibernate.core;
 
     opens org.jvmlthread.javamultithreading to javafx.fxml;
     exports org.jvmlthread.javamultithreading;
