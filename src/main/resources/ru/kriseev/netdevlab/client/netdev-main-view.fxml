@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane fx:id="mainLayout" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.kriseev.netdevlab.client.NetDevMainController">
+   <center>
+      <Pane fx:id="fieldPane" prefHeight="480" prefWidth="640" BorderPane.alignment="CENTER" />
+   </center>
+   <bottom>
+      <HBox style="-fx-border-color: black transparent transparent transparent;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="startButton" disable="true" mnemonicParsing="false" onAction="#startGame" text="Готов">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="shootButton" disable="true" mnemonicParsing="false" onAction="#shoot" text="Выстрел">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="pauseButton" disable="true" mnemonicParsing="false" onAction="#pause" text="Пауза">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </bottom>
+   <right>
+      <VBox alignment="TOP_CENTER" style="-fx-border-color: transparent transparent transparent black;" BorderPane.alignment="CENTER">
+         <children>
+            <ListView fx:id="playerListView" />
+         </children></VBox>
+   </right>
+   <top>
+      <HBox alignment="CENTER_LEFT" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="nicknameText">
+               <HBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </HBox.margin>
+            </TextField>
+            <Button fx:id="joinButton" mnemonicParsing="false" onAction="#joinClick" text="Присоединиться">
+               <HBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="leaderboardButton" mnemonicParsing="false" onAction="#showLeaderboard" text="Leaderboard">
+               <HBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </HBox.margin>
+            </Button>
+            <Label fx:id="pauseLabel" text="Пауза" visible="false">
+               <HBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </top>
+</BorderPane>
