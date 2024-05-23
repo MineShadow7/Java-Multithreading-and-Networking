@@ -207,9 +207,10 @@ public class MainApplicationController {
 
     public void showLeaderboard() {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(MainApplicationController.class.getResource("/com/example/demo1/leaderboard-dialog.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(MainApplicationController.class.getResource("/org/jvmlthread/javamultithreading/leaderboard-dialog.fxml"));
             fxmlLoader.setController(new LeaderBoardClass(client));
             Scene scene = new Scene(fxmlLoader.load());
+            scene.getStylesheets().add(getClass().getResource("/org/jvmlthread/javamultithreading/dark-theme.css").toExternalForm());
 
             Stage stage = new Stage();
             stage.setTitle("Leaderboard");

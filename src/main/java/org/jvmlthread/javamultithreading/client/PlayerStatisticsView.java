@@ -6,6 +6,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import org.jvmlthread.javamultithreading.game.GamePlayerClass;
 import java.io.IOException;
+import java.net.URL;
 
 public class PlayerStatisticsView {
     private GamePlayerClass gamePlayerClass;
@@ -26,6 +27,13 @@ public class PlayerStatisticsView {
         try
         {
             box = fxmlLoader.load();
+            URL cssURL = getClass().getResource("/org/jvmlthread/javamultithreading/dark-theme.css");
+            if(cssURL != null) {
+                box.getStylesheets().clear();
+                box.getStylesheets().add(getClass().getResource("/org/jvmlthread/javamultithreading/dark-theme.css").toExternalForm());
+            } else {
+                System.out.println("Failed to load dark-theme.css");
+            }
         }
         catch (IOException e)
         {

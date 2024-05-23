@@ -1,0 +1,30 @@
+.root {
+    -fx-background-color: #333;
+}
+
+.button {
+    -fx-background-color: #666;
+    -fx-text-fill: #eee;
+}
+
+.label {
+    -fx-text-fill: #ccc;
+}
+
+.text-field {
+    -fx-background-color: #555;
+    -fx-text-fill: #ccc;
+}
+
+.list-view {
+    -fx-background-color: #444;
+    -fx-text-fill: #ccc;
+}
+.grid-pane {
+    -fx-background-color: #444;
+    -fx-text-fill: #ccc;
+}
+
+.grid-pane .label {
+    -fx-text-fill: #eee;
+}

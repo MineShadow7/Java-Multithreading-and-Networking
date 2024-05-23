@@ -16,7 +16,8 @@ public class MainApplication extends Application {
         mainStage = stage;
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("/org/jvmlthread/javamultithreading/main-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("ИГРАТ");
+        stage.setTitle("Shooty-Shoot Game");
+        scene.getStylesheets().add(getClass().getResource("/org/jvmlthread/javamultithreading/dark-theme.css").toExternalForm());
         stage.setMinHeight(400);
         stage.setMinWidth(600);
         stage.setResizable(false);
