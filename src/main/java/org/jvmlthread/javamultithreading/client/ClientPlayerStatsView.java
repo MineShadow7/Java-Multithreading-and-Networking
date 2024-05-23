@@ -21,7 +21,7 @@ public class ClientPlayerStatsView {
 
     private VBox box;
     public ClientPlayerStatsView() {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/demo1/player-stats-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/org/jvmlthread/javamultithreading/player-stats-view.fxml"));
         fxmlLoader.setController(this);
         try
         {
