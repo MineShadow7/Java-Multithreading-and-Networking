@@ -2,7 +2,7 @@ package org.jvmlthread.javamultithreading.server;
 
 public class ServerMain {
     public static void main(String[] args) {
-        Server server = new Server();
+        ServerClass server = new ServerClass();
         server.startServer(4000);
     }
 }
