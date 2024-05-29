@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="runClient" type="Application" factoryName="Application">
-    <option name="MAIN_CLASS_NAME" value="org.jvmlthread.javamultithreading.MyClient" />
+  <configuration default="false" name="RunServer" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="org.jvmlthread.javamultithreading.server.ServerMain" />
     <module name="JavaMultithreading" />
     <method v="2">
       <option name="Make" enabled="true" />

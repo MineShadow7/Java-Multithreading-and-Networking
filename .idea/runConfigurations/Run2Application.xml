@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="RunApplication" type="Application" factoryName="Application">
+  <configuration default="false" name="Run2Application" type="Application" factoryName="Application">
     <option name="MAIN_CLASS_NAME" value="org.jvmlthread.javamultithreading.client.MainApplication" />
     <module name="JavaMultithreading" />
     <method v="2">

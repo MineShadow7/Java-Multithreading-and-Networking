@@ -20,6 +20,14 @@ public class ClientRenderer {
 
     private final Pane gamePane;
 
+    private Node createPlayerRectangle(GamePlayerClass gamePlayerClass) {
+        double width = 50;
+        double height = 30;
+        javafx.scene.shape.Rectangle rect = new javafx.scene.shape.Rectangle(gamePlayerClass.getX() - width / 2, gamePlayerClass.getY() - height / 2, width, height);
+        rect.setFill(Color.YELLOW);
+        rect.setVisible(true);
+        return rect;
+    }
 
     public ClientRenderer(Pane gamePane) {
         this.gamePane = gamePane;
@@ -50,7 +58,7 @@ public class ClientRenderer {
             if (p.getProjectile() != null) {
                 nodes.add(renderProjectile(p.getProjectile()));
             }
-            nodes.add(createPlayerPolygon(p));
+            nodes.add(createPlayerRectangle(p));
         }
     }
     private Node renderProjectile(GameArrowClass gameArrowClass) {
