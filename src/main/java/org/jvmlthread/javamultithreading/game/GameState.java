@@ -13,24 +13,6 @@ public class GameState {
         winner = null;
         paused = false;
     }
-    public GameState(double fieldWidth, double fieldHeight, GameCircleTarget[] gameCircleTargets, GamePlayerClass[] gamePlayerClasses) {
-        this.fieldWidth = fieldWidth;
-        this.fieldHeight = fieldHeight;
-        this.gamePlayerClasses = gamePlayerClasses;
-        this.gameCircleTargets = gameCircleTargets;
-        isFinished = false;
-        winner = null;
-        paused = false;
-    }
-    public GameState(double fieldWidth, double fieldHeight, GameCircleTarget[] gameCircleTargets, GamePlayerClass[] gamePlayerClasses, Boolean isFinished, String winner, Boolean paused) {
-        this.fieldWidth = fieldWidth;
-        this.fieldHeight = fieldHeight;
-        this.gamePlayerClasses = gamePlayerClasses;
-        this.gameCircleTargets = gameCircleTargets;
-        this.isFinished = isFinished;
-        this.winner = winner;
-        this.paused = paused;
-    }
     @Expose
     private final GameCircleTarget[] gameCircleTargets;
     @Expose
